@@ -134,11 +134,59 @@ async function deleteQuestion(req, res) {
 }
 
 // Function to update a question
+// async function updateQuestion(req, res) {
+//   const { question_id } = req.params; // Question ID from URL parameter
+//   const { title, question_description, tag } = req.body; // New values and user_id (authenticated user)
+//   const user_id = req.user.user_id;
+//   // console.log(user_id);
+
+//   if (!title || !question_description || !user_id) {
+//     return res
+//       .status(StatusCodes.BAD_REQUEST)
+//       .json({ msg: "Please provide title, description, and user_id" });
+//   }
+
+//   try {
+//     // Check if the question exists
+//     const [question] = await dbConnection.query(
+//       "SELECT * FROM questionTable WHERE question_id = ?",
+//       [question_id]
+//     );
+//     // console.log(question.user_id);
+//     if (question.length === 0) {
+//       return res
+//         .status(StatusCodes.NOT_FOUND)
+//         .json({ msg: "Question not found" });
+//     }
+
+//     // Check if the question belongs to the user
+//     if (question[0].user_id !== user_id) {
+//       return res.status(StatusCodes.FORBIDDEN).json({
+//         msg: "You are not authorized to update this question",
+//       });
+//     }
+
+//     // Update the question
+//     await dbConnection.query(
+//       "UPDATE questionTable SET title = ?, question_description = ?, tag = ? WHERE question_id = ?",
+//       [title, question_description, tag, question_id]
+//     );
+
+//     return res
+//       .status(StatusCodes.OK)
+//       .json({ msg: "Question updated successfully" });
+//   } catch (error) {
+//     console.error("Error updating question:", error.stack);
+//     return res
+//       .status(StatusCodes.INTERNAL_SERVER_ERROR)
+//       .json({ msg: "Something went wrong, try again later!" });
+//   }
+// }
+
 async function updateQuestion(req, res) {
-  const { question_id } = req.params; // Question ID from URL parameter
-  const { title, question_description, tag } = req.body; // New values and user_id (authenticated user)
+  const { question_id } = req.params;
+  const { title, question_description, tag } = req.body;
   const user_id = req.user.user_id;
-  // console.log(user_id);
 
   if (!title || !question_description || !user_id) {
     return res
@@ -152,25 +200,34 @@ async function updateQuestion(req, res) {
       "SELECT * FROM questionTable WHERE question_id = ?",
       [question_id]
     );
-    // console.log(question.user_id);
+
     if (question.length === 0) {
       return res
         .status(StatusCodes.NOT_FOUND)
         .json({ msg: "Question not found" });
     }
 
-    // Check if the question belongs to the user
     if (question[0].user_id !== user_id) {
       return res.status(StatusCodes.FORBIDDEN).json({
         msg: "You are not authorized to update this question",
       });
     }
 
-    // Update the question
-    await dbConnection.query(
-      "UPDATE questionTable SET title = ?, question_description = ?, tag = ? WHERE question_id = ?",
-      [title, question_description, tag, question_id]
-    );
+    // Construct query dynamically
+    let updateQuery =
+      "UPDATE questionTable SET title = ?, question_description = ?";
+    let queryParams = [title, question_description];
+
+    if (tag !== undefined) {
+      // Only include tag if provided
+      updateQuery += ", tag = ?";
+      queryParams.push(tag);
+    }
+
+    updateQuery += " WHERE question_id = ?";
+    queryParams.push(question_id);
+
+    await dbConnection.query(updateQuery, queryParams);
 
     return res
       .status(StatusCodes.OK)
@@ -182,6 +239,8 @@ async function updateQuestion(req, res) {
       .json({ msg: "Something went wrong, try again later!" });
   }
 }
+
+
 
 module.exports = {
   postQuestion,
