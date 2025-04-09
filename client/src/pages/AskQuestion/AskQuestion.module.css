@@ -1,0 +1,202 @@
+/* Styling for the main container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: #f4f7fa;
+  font-family: 'Arial', sans-serif;
+  padding: 10px;
+  flex: 1;
+}
+
+/* Styling for the form container */
+.askQuestion {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading for the steps and form */
+.heading {
+  color: #333;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Styling for the steps list */
+.stepList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.stepItem {
+  font-size: 1rem;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Form inputs & text areas */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.textarea, .input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus, .input:focus {
+  border-color: #4a90e2;
+}
+
+/* Invalid input */
+.invalid {
+  border-color: red !important;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Success message */
+.successMessage {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  align-items: center;
+  margin: 0 auto;
+  height: 40px;
+  padding: 5px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.successText {
+  color: green;
+  font-size: 1rem;
+}
+
+/* Submit button */
+.submitGroup {
+  display: flex;
+  justify-content: center;
+}
+
+.postQuestion {
+  background-color: #f29c08e9;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 40%;
+  display: flex;
+  justify-content: center; 
+  transition: background-color 0.3s ease;
+}
+
+.postQuestion:hover {
+  background-color: #0056b3;
+}
+
+.postQuestion:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Editor Styling */
+.editorContainer {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.editorWrapper {
+  flex-grow: 1;
+  min-width: 100%;
+  max-width: 100%;
+  height: 400px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.editor {
+  font-size: 16px;
+  height: 200px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+}
+
+.toolbar button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #333;
+  border: 1px solid #f0ebeb;
+  border-radius: 4px;
+  color: white;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+/* .container{
+  flex-direction: column;
+} */
+
+  .askQuestion {
+      padding: 20px;
+      width: 90%;
+  }
+
+  .submitButton {
+      /* width: 100%;  */
+  }
+
+  .editorWrapper {
+      height: 350px;
+  }
+}
+
+@media (max-width: 720px) {
+.container{
+  flex-direction: column;
+}
+
+}

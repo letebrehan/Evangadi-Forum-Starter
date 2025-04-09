@@ -1,0 +1,88 @@
+/* HowItWorks.module.css */
+
+/* Main Block */
+.how_it_works {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.how_it_works__title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Intro Text */
+.how_it_works__intro_text {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Steps Block */
+.how_it_works__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each Step */
+.how_it_works__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.how_it_works__step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Step Icon */
+.how_it_works__step_icon {
+  font-size: 2rem;
+  color: #0073e6;
+  flex-shrink: 0;
+}
+
+/* Step Title */
+.how_it_works__step_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Step Description */
+.how_it_works__step_description {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .how_it_works__steps {
+    gap: 15px;
+  }
+
+  .how_it_works__step {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how_it_works__step_icon {
+    margin-bottom: 10px;
+  }
+}

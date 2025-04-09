@@ -1,0 +1,393 @@
+/* Overall page container */
+.homeContainer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: "Arial", sans-serif;
+    
+}
+
+/* Header section */
+.homeHeader {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeHeader h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.homeHeader p {
+    font-size: 16px;
+    color: #606770;
+    margin-top: 5px;
+}
+
+.welcomeUser {
+    text-align: right;
+}
+
+.welcomeUser h1 {
+    font-size: 24px;
+    color: #f48024;
+}
+
+.welcomeUser p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Ask a question button */
+.askQuestionBtn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #f48024;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.askQuestionBtn:hover {
+    background-color: #eb700c;
+}
+
+/* Search bar */
+.searchContainer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.searchInput {
+    padding: 12px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.searchInput:focus {
+    border-color: #f48024;
+}
+
+/* Loading & error messages */
+.loadingMessage,
+.errorMessage,
+.noQuestionsMessage {
+    text-align: center;
+    font-size: 16px;
+    color: #707070;
+    margin-top: 20px;
+}
+
+.loadingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+/* Questions list */
+.questionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: .5rem .75rem;
+  width: 10%;
+  border: none;
+  background-color: #36d7b7;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+
+/* Question card */
+.cardWrapper {
+    /* background-color: rgba(113, 111, 111, 0.123); */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.cardWrapper:hover {
+    transform: translateY(-3px);
+    border-color: #f48024;
+}
+
+/* Profile section */
+.profileSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.profileIcon {
+    font-size: 28px;
+    color: #6a737c;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0074cc;
+}
+
+/* Question details */
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contentTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d2d2d;
+    /* margin-bottom: 8px; */
+}
+
+.contentTitle a {
+    color: #2d2d2d;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contentTitle a:hover {
+    color: #f48024;
+}
+
+/* Question description */
+.content div {
+    font-size: 15px;
+    color: #606770;
+    margin-bottom: 10px;
+}
+
+/* Meta section */
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #707070;
+    margin-top: 5px;
+    position: relative;
+}
+.time {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+}
+.btnContainer {
+    position: absolute;
+    left: 80%;
+}
+.metaTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tagList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.tagItem a {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #e1ecf4;
+    color: #0074cc;
+    font-size: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.tagItem a:hover {
+    background: #d0e3f1;
+}
+
+/* Buttons */
+.actionButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.editBtn,
+.deleteBtn {
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.editBtn {
+    background-color: #0074cc;
+    color: white;
+}
+
+.editBtn:hover {
+    background-color: #005fa3;
+}
+
+.deleteBtn {
+    background-color: #d9534f;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background-color: #c9302c;
+}
+
+/* Arrow navigation */
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.contentTitle {
+    text-align: left;
+}
+.arrowIcon {
+    font-size: 22px;
+    color: #f48024;
+    width: 100%;
+    cursor: pointer;
+}
+
+.arrowIcon:hover {
+    color: #d86414;
+}
+
+.questionCard {
+    width: 95%;
+    height: auto;
+}
+
+.descriptionDiv {
+    font-size: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .homeHeader {
+        flex-direction: column;
+        text-align: center;
+    }
+.pagination button {
+    width: 20%;
+}
+    .askQuestionBtn {
+        width: 80%;
+        max-width: 300px;
+    }
+    
+    .cardWrapper {
+        padding: 15px;
+    }
+
+    .profileSection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+  .userCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+    .arrow {
+        right: 10px;
+    }
+    .time {
+        top: 20%;
+        font-size: .8rem;
+    }
+    .btnContainer {
+        /* position: relative; */
+        left: 70%;
+        top: 30%;
+        
+    }
+    .descriptionDiv {
+    font-size: .75rem !important;
+}
+}
+
+@media (max-width: 480px) {
+    .btnContainer {
+        /* position: relative; */
+        left: 60%;
+        top: 10%;
+
+    }
+    .userCard{
+        position: absolute;
+        width: 50%;
+        left: 0%;
+        /* top: 10%; */
+    }
+    .time {
+    position: absolute;
+    top: -50%;
+    left: 10%;
+    font-size: .6rem;
+}
+.descriptionDiv {
+    font-size: .5rem !important;
+}
+.pagination button {
+    width: 25%;
+}
+}

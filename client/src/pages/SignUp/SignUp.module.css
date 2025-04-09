@@ -1,0 +1,136 @@
+.registerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  flex-wrap: wrap; /* Allows wrapping of elements on smaller screens */
+}
+.registerContainer a {
+  color: #f39228;
+}
+
+.leftwrapper {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.leftwrapper h1 {
+  justify-self: center;
+  padding: 2px;
+}
+
+.formContainer {
+  max-width: 460px;
+  width: 80%;
+  padding: 10px;
+  flex: 1;
+}
+
+.inputGroup {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-radius: 2%;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f39228;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #f39228;
+}
+
+.submitButton:hover {
+  background-color: #f89123;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.terms {
+  font-size: 14px;
+  text-align: center;
+}
+
+.rightWrapper {
+  width: 48%;
+  position: relative;
+  background-image: url("../../assets//images//10001.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(35, 33, 33);
+  color: white;
+  text-align: center;
+  background-position: top center;
+  background-blend-mode: darken;
+  background-color: #0009;
+  flex: 1;
+}
+
+.rightWrapper img {
+  margin-right: 55%;
+}
+
+.textContainer {
+  width: 60%;
+  align-items: center;
+}
+
+.rightWrapper h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.rightWrapper span {
+  color: #f39228;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.rightWrapper h4 {
+  width: 60%;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px;
+  line-height: 1;
+}
+.terms {
+  text-align: left;
+  padding: 1rem 0.5rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .rightWrapper {
+    display: none;
+  }
+}

@@ -1,0 +1,205 @@
+/* General Styles */
+.outerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Question Card */
+.questionCard,
+.answersCard,
+.answerCard,
+.answerFormCard {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.cardSubtitle {
+  font-size: 16px;
+  color: #0077cc;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Answers Section */
+.answerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 4px solid #f48024;
+  position: relative;
+}
+
+.answerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.profileIcon {
+  color: #888;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.answerContent {
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Answer Form */
+.answerFormCard {
+  margin-top: 20px;
+}
+
+.formTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.formGroup {
+  margin-top: 10px;
+}
+
+.quillEditor {
+  min-height: 150px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  color: orange;
+  background: black;
+}
+
+.questDiv{
+  font-size: .9rem;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.submitButton {
+  margin-top: 10px;
+  background: #f48024;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #e67e22;
+}
+
+/* Links */
+.link {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.editBtn {
+  background-color: #0074cc;
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: #005fa3;
+}
+
+.deleteBtn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.deleteBtn:hover {
+  background-color: #c9302c;
+}
+
+.btnContainer {
+  position: absolute;
+  left: 80%;
+  top: 70%;
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+@media (max-width: 768px) {
+  .btnContainer {
+    /* position: relative; */
+    left: 40%;
+    top: 70%;
+  }
+  .questDiv{
+  font-size: .7rem;
+}
+}
+
+@media (max-width: 480px) {
+ .questDiv{
+  font-size: .5rem;
+}
+.cardTitle{
+  font-size: 1rem;
+}
+}
